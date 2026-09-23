@@ -11,8 +11,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os}}
     steps:
-      - uses: actions/checkout@<SHA>
-      - uses: actions/setup-python@<SHA>
+      - uses: actions/checkout@v8
+      - uses: actions/setup-python@v8
         with:
          python-version: '3.12'
       - name: Run the check

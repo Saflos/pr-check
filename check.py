@@ -6,7 +6,7 @@ Do not fix it yet. Build the gate first, let the gate catch it, then fix it.
 import os
 import sys
 
-REPORT = "data/reports/summary.txt"
+REPORT = os.path.join("data","reports","summary.txt")
 
 
 def report_path() -> str:

@@ -1,19 +1,25 @@
 name: pr-gate
+
 on:
   pull_request:
-    branches: [ "pr-check" ]
+    branches: ["pr-check"]
   workflow_dispatch:
+
 jobs:
   check:
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os}}
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - uses: actions/checkout@<SHA>
-      - uses: actions/setup-python@<SHA>
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38
         with:
-         python-version: '3.12'
+          python-version: "3.12"
+
       - name: Run the check
-        run: check.py
+        run: python check.py
